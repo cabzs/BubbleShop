@@ -8,8 +8,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dto.Goods;
+import service.GoodsService;
+import service.GoodsServiceImpl;
 
 public class GoodsController implements Controller {
+	
+	private GoodsService service = new GoodsServiceImpl();
 
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
@@ -26,7 +30,7 @@ public class GoodsController implements Controller {
 		
 		List<Goods> list = null;
 		try {
-			
+			list = service.selectAll();
 		} catch (Exception e) {
 			e.printStackTrace();
 			return new ModelAndView("error/error.jsp");
@@ -37,5 +41,58 @@ public class GoodsController implements Controller {
 		return new ModelAndView("index.jsp");
 	}
 	
+	/**
+	 * 상품 최신 입고순 정렬
+	 * */
+	public ModelAndView selectNew (HttpServletRequest request, HttpServletResponse response){
+		List<Goods> list = null;
+		
+		try {
+			list = service.selectNew();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return new ModelAndView("error/error.jsp");
+		}
+		
+		request.setAttribute("goodsList", list);
+		return new ModelAndView("index.jsp");
+	}
+	
+	/**
+	 * 상품 찜하기 순 정렬
+	 * */
+	public ModelAndView selectLike(HttpServletRequest request, HttpServletResponse response){
+		List<Goods> list = null;
+		
+		try {
+			list = service.selectLike();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return new ModelAndView("error/error.jsp");
+		}
+		
+		request.setAttribute("goodsList", list);
+		return new ModelAndView("index.jsp");
+		
+	}
+	
+	/**
+	 * 상품 판매순 정렬
+	 * */
+	public ModelAndView selectSell (HttpServletRequest request, HttpServletResponse response){
+		List<Goods> list = null;
+		
+		try {
+			list = service.selectSell();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return new ModelAndView("error/error.jsp");
+		}
+		
+		request.setAttribute("goodsList", list);
+		return new ModelAndView("index.jsp");
+		
+		
+	}
 
 }

@@ -13,6 +13,18 @@ public class Goods {
 	private String soldState;
 	private LocalDate goodsDate;
 	
+	
+	
+	public Goods(int cateId, String goodsName, int goodsPrice, int goodsStock, String goodsDetail, String soldState) {
+		super();
+		this.cateId = cateId;
+		this.goodsName = goodsName;
+		this.goodsPrice = goodsPrice;
+		this.goodsStock = goodsStock;
+		this.goodsDetail = goodsDetail;
+		this.soldState = soldState;
+	}
+
 	public Goods(int goodsId, int cateId, String goodsName, int goodsPrice, int goodsStock, String goodsDetail,
 			String goodsImg, String soldState, LocalDate goodsDate) {
 		super();
