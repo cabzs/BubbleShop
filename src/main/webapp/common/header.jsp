@@ -80,7 +80,7 @@
                         
                         <c:if test="${loginUser ne null}">
 							<ul class="nav navbar-nav">
-								<li><a href="${pageContext.request.contextPath}/front?key=member&methodName=logout""><i class="fa fa-sign-out" aria-hidden="true"></i>
+								<li><a href="${pageContext.request.contextPath}/front?key=member&methodName=logout"><i class="fa fa-sign-out" aria-hidden="true"></i>
 								</a></li>
 							</ul>
 						</c:if>
