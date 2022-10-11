@@ -12,9 +12,12 @@
 </head>
 <!-- Hero Section Begin -->
     <section class="hero">
+    
+    	<img src="${pageContext.request.contextPath}/img/b01.jpg"/>
+        
         <div class="container">
             <div class="row">
-            	<div class="col-lg-3">
+   <!--          	<div class="col-lg-3">
             	</div>
                 <div class="col-lg-9">
                     <div class="hero__search">
@@ -28,16 +31,11 @@
                                 <button type="submit" class="site-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
                             </form>
                         </div>
-                    </div> <!-- 검색끝 -->
+                    </div> 검색끝 -->
                     </div>
                     <div class="col-lg-12">
-                    <div class="hero__item set-bg" data-setbg="img/hero/banner.jpg">
-                        <div class="hero__text">
-                            <span>FRUIT FRESH</span>
-                            <h2>Vegetable <br />100% Organic</h2>
-                            <p>Free Pickup and Delivery Available</p>
-                            <a href="#" class="primary-btn">SHOP NOW</a>
-                        </div>
+<!--                     <div class="hero__item set-bg" data-setbg="img/hero/banner.jpg">
+ -->                
                     </div>
                     </div><!-- col-lg-12 -->
                 </div>
@@ -80,16 +78,22 @@
         </div>
     </section>
     <!-- Categories Section End -->
-
+	
     <!-- Featured Section Begin -->
     <section class="featured spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>Featured Product</h2>
+                        <h2>인기 상품</h2>
                     </div>
-                    <div class="featured__controls">
+                     <div class="row">
+					    <div class="col-md-8"></div>
+					    <div class="col-6 col-md-2"></div>
+					    <div class="col-6 col-md-1"></div>
+					    <div class="col-6 col-md-1">더보기</div>
+					</div>
+                   <!--  <div class="featured__controls">
                         <ul>
                             <li class="active" data-filter="*">All</li>
                             <li data-filter=".oranges">Oranges</li>
@@ -97,7 +101,7 @@
                             <li data-filter=".vegetables">Vegetables</li>
                             <li data-filter=".fastfood">Fastfood</li>
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="row featured__filter">

@@ -46,7 +46,7 @@
     <div class=".col-6 .col-sm-4 text-center">
   		<input type="submit" id="joinBtn" class="btn btn-primary" value="로그인">
   	</div>
-  		<a href="${pageContext.request.contextPath}/user/join.jsp">회원가입</a>
+  		<a href="${pageContext.request.contextPath}/user/join.jsp">아직 회원이 아니신가요?</a>
     
 	</form>
 </div>

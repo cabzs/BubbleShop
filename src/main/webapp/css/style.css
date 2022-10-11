@@ -30,11 +30,18 @@
 /* Template default CSS
 /*----------------------------------------*/
 
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
 
 html,
 body {
 	height: 100%;
-	font-family: "Cairo", sans-serif;
+	font-family: "Pretendard-Regular", "Cairo", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
 }
@@ -59,7 +66,7 @@ h6 {
 	margin: 0;
 	color: #111111;
 	font-weight: 400;
-	font-family: "Cairo", sans-serif;
+	font-family: "Pretendard-Regular", "Cairo", sans-serif;
 }
 
 h1 {
@@ -88,7 +95,7 @@ h6 {
 
 p {
 	font-size: 16px;
-	font-family: "Cairo", sans-serif;
+	font-family: "Pretendard-Regular", "Cairo", sans-serif;
 	color: #6f6f6f;
 	font-weight: 400;
 	line-height: 26px;
@@ -496,7 +503,7 @@ body {
 }
 
 .header__menu ul li a {
-	font-size: 14px;
+	font-size: 15px;
 	color: #252525;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -535,7 +542,7 @@ body {
 }
 
 .header__cart ul li a i {
-	font-size: 18px;
+	font-size: 20px; /*아이콘 사이즈*/
 	color: #1c1c1c;
 }
 
