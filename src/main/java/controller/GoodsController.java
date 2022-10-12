@@ -35,22 +35,21 @@ public class GoodsController implements Controller {
 	public ModelAndView insert(HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		
-		String cateId = request.getParameter("cateId");
-		String goodsName = request.getParameter("goodsName");
-		String goodsPrice = request.getParameter("goodsPrice");
-		String goodsStock = request.getParameter("goodsStock");
-		String goodsDetail = request.getParameter("goodsDetail");
-		String soldState = request.getParameter("soldState");
-		
-		System.out.println(cateId + goodsName + goodsPrice + goodsStock + goodsDetail + soldState);
-		
-		
 		String saveDir = request.getServletContext().getRealPath("/img");
 		int maxSize = 1024 * 1024 * 100;// 100M
 		String encoding = "UTF-8";
 		
 		MultipartRequest m = 
 				new MultipartRequest(request, saveDir, maxSize, encoding, new DefaultFileRenamePolicy());
+		
+		String cateId = m.getParameter("cateId");
+		String goodsName = m.getParameter("goodsName");
+		String goodsPrice = m.getParameter("goodsPrice");
+		String goodsStock = m.getParameter("goodsStock");
+		String goodsDetail = m.getParameter("goodsDetail");
+		String soldState = m.getParameter("soldState");
+		
+		System.out.println(cateId + goodsName + goodsPrice + goodsStock + goodsDetail + soldState);
 		
 		//파일명 구해오기
 		System.out.println(m.getFilesystemName("goodsImg"));
