@@ -91,7 +91,7 @@
 					    <div class="col-md-8"></div>
 					    <div class="col-6 col-md-2"></div>
 					    <div class="col-6 col-md-1"></div>
-					    <div class="col-6 col-md-1">더보기</div>
+					    <div class="col-6 col-md-1"><a href="${pageContext.request.contextPath}/goods/goodsList.jsp">더보기</a></div>
 					</div>
                    <!--  <div class="featured__controls">
                         <ul>

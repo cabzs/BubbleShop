@@ -7,6 +7,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+
 import dto.Goods;
 import service.GoodsService;
 import service.GoodsServiceImpl;
@@ -21,6 +24,47 @@ public class GoodsController implements Controller {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	
+	/**
+	 * 상품 등록
+	 * */
+	/** 
+	 * 이미지 넣기 insertGoodsImg
+	 * */
+	public ModelAndView insert(HttpServletRequest request, HttpServletResponse response)
+			throws Exception {
+		
+		String cateId = request.getParameter("cateId");
+		String goodsName = request.getParameter("goodsName");
+		String goodsPrice = request.getParameter("goodsPrice");
+		String goodsStock = request.getParameter("goodsStock");
+		String goodsDetail = request.getParameter("goodsDetail");
+		String soldState = request.getParameter("soldState");
+		
+		System.out.println(cateId + goodsName + goodsPrice + goodsStock + goodsDetail + soldState);
+		
+		
+		String saveDir = request.getServletContext().getRealPath("/img");
+		int maxSize = 1024 * 1024 * 100;// 100M
+		String encoding = "UTF-8";
+		
+		MultipartRequest m = 
+				new MultipartRequest(request, saveDir, maxSize, encoding, new DefaultFileRenamePolicy());
+		
+		//파일명 구해오기
+		System.out.println(m.getFilesystemName("goodsImg"));
+
+		Goods goods = new Goods(Integer.parseInt(cateId), goodsName, Integer.parseInt(goodsPrice), Integer.parseInt(goodsStock),
+			    goodsDetail, m.getFilesystemName("goodsImg"), soldState);
+		  
+		service.insert(goods);
+		
+		return new ModelAndView("admin/adminGoods.jsp", true);
+	}
+	
+	
+	
 	
 	/**
 	 * 상품 전체 검색

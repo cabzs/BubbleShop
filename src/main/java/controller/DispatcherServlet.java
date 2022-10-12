@@ -33,9 +33,9 @@ public class DispatcherServlet extends HttpServlet {
 		String key = request.getParameter("key");
 		String methodName = request.getParameter("methodName");
 		
-		if(key==null || key.equals("")) {
-			key="goods";
-		}
+		/*
+		 * if(key==null || key.equals("")) { key="goods"; }
+		 */
 		
 //		if(methodName==null || methodName.equals("")) {
 //			methodName="selectGoodsOrderBySalesRank";

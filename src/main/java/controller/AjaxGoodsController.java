@@ -25,6 +25,7 @@ public class AjaxGoodsController implements AjaxController {
 	/**
 	 * 상품 등록
 	 * */
+	/*
 	public void insert(HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		
@@ -46,7 +47,7 @@ public class AjaxGoodsController implements AjaxController {
 	    PrintWriter out = response.getWriter(); 
 	    out.print(result); //0,1
 	    
-	}
+	} */
 	
 	/**
 	 * 상품 수정

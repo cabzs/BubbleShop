@@ -3,14 +3,21 @@ package service;
 import java.sql.SQLException;
 import java.util.List;
 
+import dao.GoodsDAO;
+import dao.GoodsDAOImpl;
 import dto.Goods;
 
 public class GoodsServiceImpl implements GoodsService {
+	
+	private GoodsDAO dao = new GoodsDAOImpl();
 
 	@Override
 	public int insert(Goods goods) throws SQLException {
-		// TODO Auto-generated method stub
-		return 0;
+		int result = dao.insert(goods);
+		if(result > 0) {
+			System.out.println("상품 등록 성공");
+		}
+		return result;
 	}
 
 	@Override

@@ -15,6 +15,11 @@ public class Goods {
 	
 	
 	
+	public Goods(int goodsId) {
+		super();
+		this.goodsId = goodsId;
+	}
+
 	public Goods(int cateId, String goodsName, int goodsPrice, int goodsStock, String goodsDetail, String soldState) {
 		super();
 		this.cateId = cateId;
@@ -22,6 +27,19 @@ public class Goods {
 		this.goodsPrice = goodsPrice;
 		this.goodsStock = goodsStock;
 		this.goodsDetail = goodsDetail;
+		this.soldState = soldState;
+	}
+
+	
+	public Goods(int cateId, String goodsName, int goodsPrice, int goodsStock, String goodsDetail,
+			String goodsImg, String soldState) {
+		super();
+		this.cateId = cateId;
+		this.goodsName = goodsName;
+		this.goodsPrice = goodsPrice;
+		this.goodsStock = goodsStock;
+		this.goodsDetail = goodsDetail;
+		this.goodsImg = goodsImg;
 		this.soldState = soldState;
 	}
 

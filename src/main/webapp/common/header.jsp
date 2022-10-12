@@ -15,6 +15,7 @@
 
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="js/mixitup.min.js"></script>
     <!-- Css Styles -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/font-awesome.min.css" type="text/css">
@@ -43,8 +44,8 @@
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="./index.jsp">버블버블 이야기</a></li>
-                            <li><a href="#">쇼핑하기</a>
+                            <li class="active"><a href="${pageContext.request.contextPath}/index.jsp">버블버블 이야기</a></li>
+                            <li><a href="${pageContext.request.contextPath}/goods/goodsList.jsp">쇼핑하기</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="./shop-details.html">헤어</a></li>
                                     <li><a href="./shoping-cart.html">바디</a></li>
@@ -63,7 +64,7 @@
                         <ul>
                         <c:choose>
                         	<c:when test="${loginUser.memberId == 'admin'}">
-                        		<li><a href="${pageContext.request.contextPath}/"><i class="fa fa-cog fa-xl"></i> 관리자</a></li>
+                        		<li>${loginUser.memberName}&nbsp&nbsp&nbsp<a href="${pageContext.request.contextPath}/admin/insertGoods.jsp"><i class="fa fa-cog fa-xl"></i></a></li>
                         	</c:when>
 	                      	<c:otherwise>
 	                        	<c:if test="${loginUser != null}">
@@ -76,7 +77,7 @@
 							<li><a href="${pageContext.request.contextPath}/user/login.jsp"><i class="fa fa-user fa-xl" aria-hidden="true"></i></a></li>
 						</c:if>
                             <li><a href="#"><i class="fa fa-heart fa-xl"></i> <span>1</span></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart fa-xl" aria-hidden="true"></i><span>3</span></a></li>
+                            <li><a href="${pageContext.request.contextPath}/cart/shoppingCart.jsp"><i class="fa fa-shopping-cart fa-xl" aria-hidden="true"></i><span>3</span></a></li>
                         </ul>
                         
                         <c:if test="${loginUser ne null}">

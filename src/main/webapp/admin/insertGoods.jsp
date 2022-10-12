@@ -15,11 +15,8 @@
 
 	<br>
 	<h4> 상품 등록 </h4><br>
-	
-	<form action="${pageContext.request.contextPath}/front" name="goods" method="post">
-	<input type="hidden" name="key" value = "goods" /> <!-- Controller를 찾는 정보 -->
-	<input type="hidden" name="methodName" value = "insert" />  <!-- 메소드이름 -->
-	
+
+	<form action="${pageContext.request.contextPath}/front?key=goods&methodName=insert" name="goods" method="post" enctype="multipart/form-data">
 		<hr>
 		<br><br>
 		<!-- 상품명 -->
