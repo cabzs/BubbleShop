@@ -45,7 +45,7 @@
                     <nav class="header__menu">
                         <ul>
                             <li class="active"><a href="${pageContext.request.contextPath}/index.jsp">버블버블 이야기</a></li>
-                            <li><a href="${pageContext.request.contextPath}/goods/goodsList.jsp">쇼핑하기</a>
+                            <li><a href="${pageContext.request.contextPath}/front?key=goods&methodName=selectAll">쇼핑하기</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="./shop-details.html">헤어</a></li>
                                     <li><a href="./shoping-cart.html">바디</a></li>

@@ -23,12 +23,18 @@ public interface GoodsService {
 	int update(int goodsNo) throws SQLException;
 	
 	/**
+	 * 상품 코드로 상품 검색
+	 * */
+	Goods select (int goodsNo) throws SQLException;
+	
+	
+	/**
 	 * 상품 전체 검색
 	 * */
 	List<Goods> selectAll() throws SQLException;
 	
 	/**
-	 * 최신 입고순으로 4개 가져오기
+	 * 최신 입고순으로 정렬
 	 * */
 	List<Goods> selectNew() throws SQLException;
 	

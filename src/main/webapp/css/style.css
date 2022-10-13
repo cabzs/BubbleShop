@@ -106,6 +106,10 @@ img {
 	max-width: 100%;
 }
 
+a {
+	color: #484848;
+}
+
 input:focus,
 select:focus,
 button:focus,
@@ -454,10 +458,11 @@ body {
 }
 
 .header__menu ul li .header__menu__dropdown {
+	/* 헤더 하위 메뉴 */
 	position: absolute;
 	left: 0;
 	top: 50px;
-	background: #222222;
+	background: #0000008c;
 	width: 180px;
 	z-index: 9;
 	padding: 5px 0;
@@ -1729,7 +1734,7 @@ body {
 
 .product__details__text .product__details__price {
 	font-size: 30px;
-	color: #dd2222;
+	color: #3a3a3a;
 	font-weight: 600;
 	margin-bottom: 15px;
 }

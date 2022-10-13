@@ -1,11 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <jsp:include page="../common/header.jsp"/>
     
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -16,135 +18,23 @@
 	<div class="col-12">
          <div class="product__discount">
              <div class="section-title product__discount__title">
-                 <h2>¿¸√º ªÛ«∞</h2>
+                 <h2>Ï†ÑÏ≤¥ ÏÉÅÌíà</h2>
              </div>
-             <div class="row">
-                 <div class="product__discount__slider owl-carousel">
-                     <div class="col-lg-4">
-                         <div class="product__discount__item">
-                             <div class="product__discount__item__pic set-bg"
-                                 data-setbg="img/product/discount/pd-1.jpg">
-                                 <div class="product__discount__percent">-20%</div>
-                                 <ul class="product__item__pic__hover">
-                                     <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                     <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                     <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                 </ul>
-                             </div>
-                             <div class="product__discount__item__text">
-                                 <span>Dried Fruit</span>
-                                 <h5><a href="#">Raisin°Øn°Ønuts</a></h5>
-                                 <div class="product__item__price">$30.00 <span>$36.00</span></div>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="col-lg-4">
-                         <div class="product__discount__item">
-                             <div class="product__discount__item__pic set-bg"
-                                 data-setbg="img/product/discount/pd-2.jpg">
-                                 <div class="product__discount__percent">-20%</div>
-                                 <ul class="product__item__pic__hover">
-                                     <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                     <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                     <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                 </ul>
-                             </div>
-                             <div class="product__discount__item__text">
-                                 <span>Vegetables</span>
-                                 <h5><a href="#">Vegetables°Øpackage</a></h5>
-                                 <div class="product__item__price">$30.00 <span>$36.00</span></div>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="col-lg-4">
-                         <div class="product__discount__item">
-                             <div class="product__discount__item__pic set-bg"
-                                 data-setbg="img/product/discount/pd-3.jpg">
-                                 <div class="product__discount__percent">-20%</div>
-                                 <ul class="product__item__pic__hover">
-                                     <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                     <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                     <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                 </ul>
-                             </div>
-                             <div class="product__discount__item__text">
-                                 <span>Dried Fruit</span>
-                                 <h5><a href="#">Mixed Fruitss</a></h5>
-                                 <div class="product__item__price">$30.00 <span>$36.00</span></div>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="col-lg-4">
-                         <div class="product__discount__item">
-                             <div class="product__discount__item__pic set-bg"
-                                 data-setbg="img/product/discount/pd-4.jpg">
-                                 <div class="product__discount__percent">-20%</div>
-                                 <ul class="product__item__pic__hover">
-                                     <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                     <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                     <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                 </ul>
-                             </div>
-                             <div class="product__discount__item__text">
-                                 <span>Dried Fruit</span>
-                                 <h5><a href="#">Raisin°Øn°Ønuts</a></h5>
-                                 <div class="product__item__price">$30.00 <span>$36.00</span></div>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="col-lg-4">
-                         <div class="product__discount__item">
-                             <div class="product__discount__item__pic set-bg"
-                                 data-setbg="img/product/discount/pd-5.jpg">
-                                 <div class="product__discount__percent">-20%</div>
-                                 <ul class="product__item__pic__hover">
-                                     <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                     <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                     <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                 </ul>
-                             </div>
-                             <div class="product__discount__item__text">
-                                 <span>Dried Fruit</span>
-                                 <h5><a href="#">Raisin°Øn°Ønuts</a></h5>
-                                 <div class="product__item__price">$30.00 <span>$36.00</span></div>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="col-lg-4">
-                         <div class="product__discount__item">
-                             <div class="product__discount__item__pic set-bg"
-                                 data-setbg="img/product/discount/pd-6.jpg">
-                                 <div class="product__discount__percent">-20%</div>
-                                 <ul class="product__item__pic__hover">
-                                     <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                     <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                     <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                 </ul>
-                             </div>
-                             <div class="product__discount__item__text">
-                                 <span>Dried Fruit</span>
-                                 <h5><a href="#">Raisin°Øn°Ønuts</a></h5>
-                                 <div class="product__item__price">$30.00 <span>$36.00</span></div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </div>
+                 
          <div class="filter__item">
              <div class="row">
                   		<div class="col-md-8"></div>
 					    <div class="col-6 col-md-2"></div>
 					    <div class="col-6 col-md-2">
-	                     <!-- ªÛ«∞ ¡§∑ƒ -->
+	                     <!-- ÏÉÅÌíà Ï†ïÎ†¨ -->
 						<div class="filter__sort">
 	                         <select class="form-control">
-								<option value="">¡§∑ƒ±‚¡ÿ</option>
-								<option value="1">∆«∏≈º¯</option>
-								<option value="2">¿Œ±‚º¯</option>
-								<option value="3">Ω≈ªÛ«∞º¯</option>
-								<option value="4">≥∑¿∫∞°∞›º¯</option>
-								<option value="5">≥Ù¿∫∞°∞›º¯</option>
+								<option value="">Ï†ïÎ†¨Í∏∞Ï§Ä</option>
+								<option value="1">ÌåêÎß§Ïàú</option>
+								<option value="2">Ïù∏Í∏∞Ïàú</option>
+								<option value="3">Ïã†ÏÉÅÌíàÏàú</option>
+								<option value="4">ÎÇÆÏùÄÍ∞ÄÍ≤©Ïàú</option>
+								<option value="5">ÎÜíÏùÄÍ∞ÄÍ≤©Ïàú</option>
 	                         </select>
 	                     </div>
 					</div>
@@ -152,187 +42,32 @@
              </div>
          </div>
          <div class="row">
+             <c:forEach items="${requestScope.goodsList}" var="goodsList">
              <div class="col-lg-4 col-md-6 col-sm-6">
                  <div class="product__item">
-                     <div class="product__item__pic set-bg" data-setbg="img/product/product-1.jpg">
-                         <ul class="product__item__pic__hover">
+                     <div class="product__item__pic set-bg" 
+                     		style="background-image : url(${pageContext.request.contextPath}/img/${goodsList.goodsImg}); 
+                     		background-size: contain; 
+                     		background-repeat: no-repeat; cursor: pointer;" 
+                     		onclick="location.href='${pageContext.request.contextPath}/front?key=goods&methodName=goodsView&goodsId=${goodsList.goodsId}'">
+<%--                      <img alt="" src="${pageContext.request.contextPath}/img/${goodsList.goodsImg}">
+ --%>                         <ul class="product__item__pic__hover">
                              <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                             <li><a href="#"><i class="fa fa-retweet"></i></a></li>
                              <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                          </ul>
                      </div>
                      <div class="product__item__text">
-                         <h6><a href="#">Crab Pool Security</a></h6>
-                         <h5>$30.00</h5>
+                         <h6><a href="${pageContext.request.contextPath}/front?key=goods&methodName=goodsView&goodsId=${goodsList.goodsId}">${goodsList.goodsName}</a></h6>
+                         <h5><fmt:formatNumber>${goodsList.goodsPrice}</fmt:formatNumber></h5><br>
+                        	<c:if test="${goodsList.goodsStock == 0}">
+		                        <input type="button" class="btn btn-secondary btn-sm" disabled='disabled' value="ÏùºÏãúÌíàÏ†à" style="cursor: default;">
+                        	</c:if>
                      </div>
                  </div>
              </div>
-             <div class="col-lg-4 col-md-6 col-sm-6">
-                 <div class="product__item">
-                     <div class="product__item__pic set-bg" data-setbg="img/product/product-2.jpg">
-                         <ul class="product__item__pic__hover">
-                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                             <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                             <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                         </ul>
-                     </div>
-                     <div class="product__item__text">
-                         <h6><a href="#">Crab Pool Security</a></h6>
-                         <h5>$30.00</h5>
-                     </div>
-                 </div>
-             </div>
-             <div class="col-lg-4 col-md-6 col-sm-6">
-                 <div class="product__item">
-                     <div class="product__item__pic set-bg" data-setbg="img/product/product-3.jpg">
-                         <ul class="product__item__pic__hover">
-                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                             <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                             <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                         </ul>
-                     </div>
-                     <div class="product__item__text">
-                         <h6><a href="#">Crab Pool Security</a></h6>
-                         <h5>$30.00</h5>
-                     </div>
-                 </div>
-             </div>
-             <div class="col-lg-4 col-md-6 col-sm-6">
-                 <div class="product__item">
-                     <div class="product__item__pic set-bg" data-setbg="img/product/product-4.jpg">
-                         <ul class="product__item__pic__hover">
-                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                             <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                             <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                         </ul>
-                     </div>
-                     <div class="product__item__text">
-                         <h6><a href="#">Crab Pool Security</a></h6>
-                         <h5>$30.00</h5>
-                     </div>
-                 </div>
-             </div>
-             <div class="col-lg-4 col-md-6 col-sm-6">
-                 <div class="product__item">
-                     <div class="product__item__pic set-bg" data-setbg="img/product/product-5.jpg">
-                         <ul class="product__item__pic__hover">
-                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                             <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                             <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                         </ul>
-                     </div>
-                     <div class="product__item__text">
-                         <h6><a href="#">Crab Pool Security</a></h6>
-                         <h5>$30.00</h5>
-                     </div>
-                 </div>
-             </div>
-             <div class="col-lg-4 col-md-6 col-sm-6">
-                 <div class="product__item">
-                     <div class="product__item__pic set-bg" data-setbg="img/product/product-6.jpg">
-                         <ul class="product__item__pic__hover">
-                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                             <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                             <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                         </ul>
-                     </div>
-                     <div class="product__item__text">
-                         <h6><a href="#">Crab Pool Security</a></h6>
-                         <h5>$30.00</h5>
-                     </div>
-                 </div>
-             </div>
-             <div class="col-lg-4 col-md-6 col-sm-6">
-                 <div class="product__item">
-                     <div class="product__item__pic set-bg" data-setbg="img/product/product-7.jpg">
-                         <ul class="product__item__pic__hover">
-                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                             <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                             <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                         </ul>
-                     </div>
-                     <div class="product__item__text">
-                         <h6><a href="#">Crab Pool Security</a></h6>
-                         <h5>$30.00</h5>
-                     </div>
-                 </div>
-             </div>
-             <div class="col-lg-4 col-md-6 col-sm-6">
-                 <div class="product__item">
-                     <div class="product__item__pic set-bg" data-setbg="img/product/product-8.jpg">
-                         <ul class="product__item__pic__hover">
-                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                             <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                             <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                         </ul>
-                     </div>
-                     <div class="product__item__text">
-                         <h6><a href="#">Crab Pool Security</a></h6>
-                         <h5>$30.00</h5>
-                     </div>
-                 </div>
-             </div>
-             <div class="col-lg-4 col-md-6 col-sm-6">
-                 <div class="product__item">
-                     <div class="product__item__pic set-bg" data-setbg="img/product/product-9.jpg">
-                         <ul class="product__item__pic__hover">
-                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                             <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                             <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                         </ul>
-                     </div>
-                     <div class="product__item__text">
-                         <h6><a href="#">Crab Pool Security</a></h6>
-                         <h5>$30.00</h5>
-                     </div>
-                 </div>
-             </div>
-             <div class="col-lg-4 col-md-6 col-sm-6">
-                 <div class="product__item">
-                     <div class="product__item__pic set-bg" data-setbg="img/product/product-10.jpg">
-                         <ul class="product__item__pic__hover">
-                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                             <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                             <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                         </ul>
-                     </div>
-                     <div class="product__item__text">
-                         <h6><a href="#">Crab Pool Security</a></h6>
-                         <h5>$30.00</h5>
-                     </div>
-                 </div>
-             </div>
-             <div class="col-lg-4 col-md-6 col-sm-6">
-                 <div class="product__item">
-                     <div class="product__item__pic set-bg" data-setbg="img/product/product-11.jpg">
-                         <ul class="product__item__pic__hover">
-                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                             <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                             <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                         </ul>
-                     </div>
-                     <div class="product__item__text">
-                         <h6><a href="#">Crab Pool Security</a></h6>
-                         <h5>$30.00</h5>
-                     </div>
-                 </div>
-             </div>
-             <div class="col-lg-4 col-md-6 col-sm-6">
-                 <div class="product__item">
-                     <div class="product__item__pic set-bg" data-setbg="img/product/product-12.jpg">
-                         <ul class="product__item__pic__hover">
-                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                             <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                             <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                         </ul>
-                     </div>
-                     <div class="product__item__text">
-                         <h6><a href="#">Crab Pool Security</a></h6>
-                         <h5>$30.00</h5>
-                     </div>
-                 </div>
-             </div>
-         </div>
+             </c:forEach>
+     	</div>
+     <!-- ÌéòÏù¥ÏßÄ Î≤ÑÌäº -->
          <br>
          <div class="product__pagination">
              <a href="#">1</a>
@@ -340,6 +75,7 @@
              <a href="#">3</a>
              <a href="#"><i class="fa fa-long-arrow-right"></i></a>
          </div>
+     </div>
      </div>
     </section>
     <!-- Product Section End -->

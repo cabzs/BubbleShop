@@ -24,6 +24,11 @@ public interface GoodsDAO {
 	int update(int goodsNo) throws SQLException;
 	
 	/**
+	 * 상품 코드로 상품 검색
+	 * */
+	Goods select (int goodsNo) throws SQLException;
+	
+	/**
 	 * 상품 전체 검색
 	 * */
 	List<Goods> selectAll() throws SQLException;

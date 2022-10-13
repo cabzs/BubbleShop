@@ -13,7 +13,7 @@
 <!-- Hero Section Begin -->
     <section class="hero">
     
-    	<img src="${pageContext.request.contextPath}/img/b01.jpg"/>
+    	<img src="${pageContext.request.contextPath}/img/b04.jpg"/>
         
         <div class="container">
             <div class="row">
@@ -91,7 +91,7 @@
 					    <div class="col-md-8"></div>
 					    <div class="col-6 col-md-2"></div>
 					    <div class="col-6 col-md-1"></div>
-					    <div class="col-6 col-md-1"><a href="${pageContext.request.contextPath}/goods/goodsList.jsp">더보기</a></div>
+					    <div class="col-6 col-md-1"><a href="${pageContext.request.contextPath}/front?key=goods&methodName=selectAll">더보기 ></a></div>
 					</div>
                    <!--  <div class="featured__controls">
                         <ul>

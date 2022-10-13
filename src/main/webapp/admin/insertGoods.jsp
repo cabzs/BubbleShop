@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <jsp:include page="../common/header.jsp"/>
 
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -14,23 +14,24 @@
 
 
 	<br>
-	<h4> »óÇ° µî·Ï </h4><br>
+	<h4> ìƒí’ˆ ë“±ë¡ </h4><br>
 
-	<form action="${pageContext.request.contextPath}/front?key=goods&methodName=insert" name="goods" method="post" enctype="multipart/form-data">
+	<form action="${pageContext.request.contextPath}/front?key=goods&methodName=insert" name="goods" 
+	method="post" enctype="multipart/form-data" accept-charset="utf-8">
 		<hr>
 		<br><br>
-		<!-- »óÇ°¸í -->
+		<!-- ìƒí’ˆëª… -->
 		<div class="mb-3 row">
 			<div class="col-sm-3"></div>
-		    <label class="col-sm-2 col-form-label">Ä«Å×°í¸® ºÐ·ù</label>
+		    <label class="col-sm-2 col-form-label">ì¹´í…Œê³ ë¦¬ ë¶„ë¥˜</label>
 		    <div class="col-sm-4">
 		    	<select class="form-control" id="cateId" name="cateId">
-		    		<option value="">¼±ÅÃÇØÁÖ¼¼¿ä</option>
-		    		<option value="1">Çì¾î</option>
-		    		<option value="2">¹Ùµð</option>
-		    		<option value="3">¸®ºù</option>
-		    		<option value="4">¼±¹°¼¼Æ®</option>
-		    		<option value="5">¼ÒÇ°</option>
+		    		<option value="">ì„ íƒí•´ì£¼ì„¸ìš”</option>
+		    		<option value="1">í—¤ì–´</option>
+		    		<option value="2">ë°”ë””</option>
+		    		<option value="3">ë¦¬ë¹™</option>
+		    		<option value="4">ì„ ë¬¼ì„¸íŠ¸</option>
+		    		<option value="5">ì†Œí’ˆ</option>
 		    	</select>
 		    </div>
 			<div class="col-sm-3"></div>
@@ -38,62 +39,65 @@
 		
 		
 		
-		<!-- »óÇ°¸í -->
+		<!-- ìƒí’ˆëª… -->
 		<div class="mb-3 row">
 			<div class="col-sm-3"></div>
-		    <label class="col-sm-2 col-form-label">»óÇ°¸í</label>
+		    <label class="col-sm-2 col-form-label">ìƒí’ˆëª…</label>
 		    <div class="col-sm-4">
 				<input type="text" class="form-control" id="goodsName" name="goodsName">
 		    </div>
 			<div class="col-sm-3"></div>
 	    </div>
 	    
-		<!-- °¡°Ý -->
+		<!-- ê°€ê²© -->
 	    <div class="mb-3 row">
 	    	<div class="col-sm-3"></div>
-		    <label class="col-sm-2 col-form-label">°¡°Ý</label>
+		    <label class="col-sm-2 col-form-label">ê°€ê²©</label>
 		    <div class="col-sm-4">
 		    	<input type="text" class="form-control" id="goodsPrice" name="goodsPrice">
 		    </div>
 		    <div class="col-sm-3"></div>
 	    </div>
 	    
-		<!-- Àç°í -->
+		<!-- ìž¬ê³  -->
 		<div class="mb-3 row">
 	    	<div class="col-sm-3"></div>
-		    <label class="col-sm-2 col-form-label">Àç°í·®</label>
+		    <label class="col-sm-2 col-form-label">ìž¬ê³ ëŸ‰</label>
 		    <div class="col-sm-4">
 		      <input type="text" class="form-control" id="goodsStock" name="goodsStock">
 		    </div>
 		    <div class="col-sm-3"></div>
 	    </div>
 	    
-		<!-- »óÇ° »ó¼¼ -->
+		<!-- ìƒí’ˆ ìƒì„¸ -->
 		<div class="mb-3 row">
 	    	<div class="col-sm-3"></div>
-		    <label class="col-sm-2 col-form-label">»ó¼¼ ¼³¸í</label>
+		    <label class="col-sm-2 col-form-label">ìƒì„¸ ì„¤ëª…</label>
 		    <div class="col-sm-4">
 		      <textarea class="form-control" id="goodsDetail" name="goodsDetail"></textarea>
 		    </div>
 	    	<div class="col-sm-3"></div>
 	    </div>
 	    
-	    <!-- »óÇ° ÀÌ¹ÌÁö -->
+	    <!-- ìƒí’ˆ ì´ë¯¸ì§€ -->
 	   	<div class="mb-3 row">
 	   		<div class="col-sm-3"></div>
-		    <label class="col-sm-2 col-form-label">ÀÌ¹ÌÁö</label>
+		    <label class="col-sm-2 col-form-label">ì´ë¯¸ì§€</label>
 		    <div class="col-sm-4">
 		      <input type="file" id="goodsImg" name="goodsImg">
 		    </div>
 		    <div class="col-sm-3"></div>
 	    </div>
 		
-		<!-- Ç°Àý ¿©ºÎ -->
+		<!-- í’ˆì ˆ ì—¬ë¶€ -->
 	   	<div class="mb-3 row">
 	   		<div class="col-sm-3"></div>
-		    <label class="col-sm-2 col-form-label">Ç°Àý ¿©ºÎ</label>
+		    <label class="col-sm-2 col-form-label">í’ˆì ˆ ì—¬ë¶€</label>
 		    <div class="col-sm-4">
-		      <input type="text" class="form-control" id="soldState" name="soldState">
+		    	<select class="form-control" id="soldState" name="soldState">
+		    		<option value="1">N</option>
+		    		<option value="2">Y</option>
+		    	</select>
 		    </div>
 		    <div class="col-sm-3"></div>
 	    </div>
@@ -101,7 +105,7 @@
 	    
 	    <br>
 	    <div class=".col-6 .col-sm-4 text-center">
-	  		<input type="submit" id="insertBtn" class="btn btn-primary" value="»óÇ°µî·Ï">
+	  		<input type="submit" id="insertBtn" class="btn btn-primary" value="ìƒí’ˆë“±ë¡">
 	  	</div>
     
 	</form>

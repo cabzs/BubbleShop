@@ -25,12 +25,8 @@ public class GoodsController implements Controller {
 		return null;
 	}
 	
-	
-	/**
-	 * 상품 등록
-	 * */
 	/** 
-	 * 이미지 넣기 insertGoodsImg
+	 * 상품 등록 , 이미지 넣기 insertGoodsImg
 	 * */
 	public ModelAndView insert(HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
@@ -49,8 +45,6 @@ public class GoodsController implements Controller {
 		String goodsDetail = m.getParameter("goodsDetail");
 		String soldState = m.getParameter("soldState");
 		
-		System.out.println(cateId + goodsName + goodsPrice + goodsStock + goodsDetail + soldState);
-		
 		//파일명 구해오기
 		System.out.println(m.getFilesystemName("goodsImg"));
 
@@ -59,16 +53,18 @@ public class GoodsController implements Controller {
 		  
 		service.insert(goods);
 		
-		return new ModelAndView("admin/adminGoods.jsp", true);
+		request.setAttribute("goods", goods);
+		
+		return new ModelAndView("front?key=goods&methodName=selectAllAdmin",true);
 	}
 	
 	
 	
 	
 	/**
-	 * 상품 전체 검색
+	 * 상품 전체 검색 - 회원
 	 * */
-	public ModelAndView searchSelectAll(HttpServletRequest request, HttpServletResponse response){
+	public ModelAndView selectAll(HttpServletRequest request, HttpServletResponse response){
 		response.setContentType("text/html;charset=UTF-8");
 		
 		List<Goods> list = null;
@@ -81,7 +77,25 @@ public class GoodsController implements Controller {
 		
 		
 		request.setAttribute("goodsList", list);
-		return new ModelAndView("index.jsp");
+		return new ModelAndView("/goods/goodsList.jsp");
+	}
+	
+	
+	/**
+	 * 상품 전체 검색 - 관리자
+	 * */
+	public ModelAndView selectAllAdmin (HttpServletRequest request, HttpServletResponse response)
+			throws Exception {
+		response.setContentType("text/html;charset=UTF-8");
+		
+		List<Goods> list = null;
+		
+		list = service.selectAll();
+		
+		request.setAttribute("list", list);
+		
+		return new ModelAndView("/admin/adminGoods.jsp");
+	
 	}
 	
 	/**
@@ -100,6 +114,22 @@ public class GoodsController implements Controller {
 		request.setAttribute("goodsList", list);
 		return new ModelAndView("index.jsp");
 	}
+	
+	/**
+	 * 상품 상세페이지
+	 * */
+	public ModelAndView goodsView(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String goodsId = request.getParameter("goodsId");
+		System.out.println(goodsId);
+		
+		//상품 번호로 상품 객체구해온다
+		Goods goods = service.select(Integer.parseInt(goodsId));
+		System.out.println(goods);
+		request.setAttribute("goodsList", goods);
+		ModelAndView mv = new ModelAndView("goods/goodsDetail.jsp");
+		return mv;
+	}
+	
 	
 	/**
 	 * 상품 찜하기 순 정렬
