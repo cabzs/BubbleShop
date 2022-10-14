@@ -10,6 +10,14 @@ public class Cart {
 	private String cartState;
 	private LocalDate cartDate;
 	
+	
+	public Cart(String memberId, int goodsId, int count) {
+		super();
+		this.memberId = memberId;
+		this.goodsId = goodsId;
+		this.count = count;
+	}
+
 	public Cart(int cartId, String memberId, int goodsId, int count, String cartState, LocalDate cartDate) {
 		super();
 		this.cartId = cartId;
@@ -20,6 +28,7 @@ public class Cart {
 		this.cartDate = cartDate;
 	}
 	
+
 	public int getCartId() {
 		return cartId;
 	}

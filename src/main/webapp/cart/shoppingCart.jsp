@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <jsp:include page="../common/header.jsp"/>
     
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -15,7 +15,7 @@
         <div class="container">
             <div class="row">
 	            <div class="section-title">
-	            	<h2>¿ÂπŸ±∏¥œ</h2>
+	            	<h2>Ïû•Î∞îÍµ¨Îãà</h2>
 	            </div>
 	            <br><br>
                 <div class="col-lg-12">
@@ -23,10 +23,10 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th class="shoping__product">ªÛ«∞∏Ì</th>
-                                    <th>∞°∞›</th>
-                                    <th>ºˆ∑Æ</th>
-                                    <th>√— ∞°∞›</th>
+                                    <th class="shoping__product">ÏÉÅÌíàÎ™Ö</th>
+                                    <th>Í∞ÄÍ≤©</th>
+                                    <th>ÏàòÎüâ</th>
+                                    <th>Ï¥ù Í∞ÄÍ≤©</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -34,10 +34,10 @@
                                 <tr>
                                     <td class="shoping__cart__item">
                                         <img src="img/cart/cart-1.jpg" alt="">
-                                        <h5>Vegetable°Øs Package</h5>
+                                        <h5>Vegetable‚Äôs Package</h5>
                                     </td>
                                     <td class="shoping__cart__price">
-                                        0 ø¯
+                                        0 Ïõê
                                     </td>
                                     <td class="shoping__cart__quantity">
                                         <div class="quantity">
@@ -47,7 +47,7 @@
                                         </div>
                                     </td>
                                     <td class="shoping__cart__total">
-                                        0 ø¯
+                                        0 Ïõê
                                     </td>
                                     <td class="shoping__cart__item__close">
                                         <span class="icon_close"></span>
@@ -59,7 +59,7 @@
                                         <h5>Fresh Garden Vegetable</h5>
                                     </td>
                                     <td class="shoping__cart__price">
-                                        0 ø¯
+                                        0 Ïõê
                                     </td>
                                     <td class="shoping__cart__quantity">
                                         <div class="quantity">
@@ -69,7 +69,7 @@
                                         </div>
                                     </td>
                                     <td class="shoping__cart__total">
-                                        0 ø¯
+                                        0 Ïõê
                                     </td>
                                     <td class="shoping__cart__item__close">
                                         <span class="icon_close"></span>
@@ -81,7 +81,7 @@
                                         <h5>Organic Bananas</h5>
                                     </td>
                                     <td class="shoping__cart__price">
-                                        0 ø¯
+                                        0 Ïõê
                                     </td>
                                     <td class="shoping__cart__quantity">
                                         <div class="quantity">
@@ -91,7 +91,7 @@
                                         </div>
                                     </td>
                                     <td class="shoping__cart__total">
-                                       0 ø¯
+                                       0 Ïõê
                                     </td>
                                     <td class="shoping__cart__item__close">
                                         <span class="icon_close"></span>
@@ -113,20 +113,31 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="shoping__checkout">
-                        <h5>±›æ◊ «’∞Ë</h5>
+                        <h5>Í∏àÏï° Ìï©Í≥Ñ</h5>
                         <ul>
-                            <li>ªÛ«∞ √— ±›æ◊ <span>0 ø¯</span></li>
-                            <li>πËº€∫Ò <span>0 ø¯</span></li>
+                            <li>ÏÉÅÌíà Ï¥ù Í∏àÏï° <span>0 Ïõê</span></li>
+                            <li>Î∞∞ÏÜ°ÎπÑ <span>0 Ïõê</span></li>
                             <hr>
-                            <li>√— ∞·¡¶ ±›æ◊ <span>0 ø¯</span></li>
+                            <li>Ï¥ù Í≤∞Ï†ú Í∏àÏï° <span>0 Ïõê</span></li>
                         </ul>
-                        <a href="#" class="primary-btn">¡÷πÆ«œ±‚</a>
+                        <a href="#" class="primary-btn">Ï£ºÎ¨∏ÌïòÍ∏∞</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- Shoping Cart Section End -->
+
+ <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+
 
 </body>
 <jsp:include page="../common/footer.jsp"/>

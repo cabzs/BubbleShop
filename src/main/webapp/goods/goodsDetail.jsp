@@ -10,6 +10,20 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+
+<script type="text/javascript">
+	$(function(){
+		
+		$("#cartButton").click(function(){
+			location.href="${pageContext.request.contextPath}/front?key=cart&methodName=insert&goodsId="+ ${goodsList.goodsId}+"&quantity="+$("#quantity").val()		
+		})
+		
+	})
+
+
+</script>
+
+
 <body>
 <section class="product-details spad">
         <div class="container">
@@ -39,9 +53,7 @@
                         <div class="product__details__quantity">
                             <div class="quantity">
                                 <div class="pro-qty">
-                                	<span class="dec qtybtn">-</span>
-                                    <input type="text" value="1">
-                                	<span class="inc qtybtn">+</span>
+                                    <input type="text" value="1" id="quantity" name="quantity" min="1" max="99">
                                 </div>
                             </div>
                         </div>
@@ -50,7 +62,7 @@
 		                        <input type="button" class="btn btn-secondary" disabled='disabled' value="일시품절">
                         	</c:when>
                         	<c:otherwise>
-		                        <a href="#" class="primary-btn">장바구니</a>
+		                        <a href="#" class="primary-btn" id="cartButton">장바구니</a>
                         	</c:otherwise>
                         </c:choose>
                         <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
@@ -75,6 +87,16 @@
                 </div>
     </section>
     <!-- Product Details Section End -->
+
+ <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
 
 
 </body>

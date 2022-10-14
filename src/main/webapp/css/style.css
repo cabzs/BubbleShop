@@ -1571,7 +1571,7 @@ body {
 	height: 350px;
 	position: relative;
 	overflow: hidden;
-	border-radius: 200px;
+	border-radius: 50px;
 }
 
 .product__item__pic__hover {
@@ -1823,6 +1823,7 @@ body {
 	text-align: center;
 }
 
+/*장바구니 수량 추가 버튼*/
 .pro-qty .qtybtn {
 	width: 35px;
 	font-size: 16px;

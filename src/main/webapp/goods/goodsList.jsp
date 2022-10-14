@@ -25,6 +25,7 @@
          <div class="product__discount">
              <div class="section-title product__discount__title">
                  <h2>전체 상품</h2>
+
              </div>
                  
          <div class="filter__item">
