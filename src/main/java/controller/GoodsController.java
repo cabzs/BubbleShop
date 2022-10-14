@@ -167,5 +167,26 @@ public class GoodsController implements Controller {
 		
 		
 	}
+	
+	/**
+	 * 상품 카테고리별 정렬
+	 * */
+	public ModelAndView selectByCate (HttpServletRequest request, HttpServletResponse response) {
+		List<Goods> list = null;
+		
+		String cateId = request.getParameter("cateId");
+		
+		try {
+			list = service.selectByCate(Integer.parseInt(cateId));
+		} catch (Exception e) {
+			e.printStackTrace();
+			return new ModelAndView("error/error.jsp");
+		}
+		
+		request.setAttribute("goodsList", list);
+		return new ModelAndView("/goods/goodsList.jsp");
+	}
+	
+	
 
 }

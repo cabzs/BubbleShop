@@ -1567,9 +1567,11 @@ body {
 }
 
 .product__item__pic {
-	height: 270px;
+	/*썸네일 사진*/
+	height: 350px;
 	position: relative;
 	overflow: hidden;
+	border-radius: 25px;
 }
 
 .product__item__pic__hover {

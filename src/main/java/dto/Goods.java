@@ -13,8 +13,6 @@ public class Goods {
 	private String soldState;
 	private LocalDate goodsDate;
 	
-	
-	
 	public Goods(int goodsId) {
 		super();
 		this.goodsId = goodsId;
@@ -56,7 +54,7 @@ public class Goods {
 		this.soldState = soldState;
 		this.goodsDate = goodsDate;
 	}
-
+	
 	public int getGoodsId() {
 		return goodsId;
 	}

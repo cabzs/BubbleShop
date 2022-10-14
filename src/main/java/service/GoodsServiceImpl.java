@@ -27,8 +27,8 @@ public class GoodsServiceImpl implements GoodsService {
 	}
 
 	@Override
-	public int update(int goodsNo) throws SQLException {
-		int result = dao.update(goodsNo);
+	public int update(Goods goods) throws SQLException {
+		int result = dao.update(goods);
 		return result;
 	}
 
@@ -64,6 +64,11 @@ public class GoodsServiceImpl implements GoodsService {
 	public List<Goods> selectSell() throws SQLException {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public List<Goods> selectByCate(int cateId) throws SQLException {
+		return dao.selectByCate(cateId);
 	}
 
 

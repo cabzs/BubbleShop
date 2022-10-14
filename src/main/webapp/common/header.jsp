@@ -29,6 +29,17 @@
 
 </head>
 
+
+<script type="text/javascript">
+	$(function(){
+		$("a[name=category]").click(function(){
+			let cateId = $(this).attr("id");
+			location.href="${pageContext.request.contextPath}/front?key=goods&methodName=selectByCate&cateId="+cateId;
+		})
+	});
+</script>
+
+
 <body>
 
  <!-- Header Section Begin -->
@@ -47,11 +58,11 @@
                             <li class="active"><a href="${pageContext.request.contextPath}/index.jsp">버블버블 이야기</a></li>
                             <li><a href="${pageContext.request.contextPath}/front?key=goods&methodName=selectAll">쇼핑하기</a>
                                 <ul class="header__menu__dropdown">
-                                    <li><a href="./shop-details.html">헤어</a></li>
-                                    <li><a href="./shoping-cart.html">바디</a></li>
-                                    <li><a href="./checkout.html">리빙</a></li>
-                                    <li><a href="./blog-details.html">선물세트</a></li>
-                                    <li><a href="./blog-details.html">소품</a></li>
+                                    <li><a href="#" name="category" id="1" >헤어</a></li>
+                                    <li><a href="#" name="category" id="2" >바디</a></li>
+                                    <li><a href="#" name="category" id="3" >리빙</a></li>
+                                    <li><a href="#" name="category" id="4" >선물세트</a></li>
+                                    <li><a href="#" name="category" id="5" >소품</a></li>
                                 </ul>
                             </li>
                             <li><a href="./blog.html">게시판</a></li>

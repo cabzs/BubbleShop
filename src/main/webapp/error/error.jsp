@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h3>에러가 발생했습니다.</h3>
-	<h2>${error.message}</h2>
+	<h2>${errorMsg}</h2>
 </body>
 <jsp:include page="../common/footer.jsp"/>
 </html>

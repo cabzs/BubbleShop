@@ -20,7 +20,7 @@ public interface GoodsService {
 	/**
 	 * 상품 코드로 상품 수정
 	 * */
-	int update(int goodsNo) throws SQLException;
+	int update(Goods goods) throws SQLException;
 	
 	/**
 	 * 상품 코드로 상품 검색
@@ -47,5 +47,10 @@ public interface GoodsService {
 	 * 인기순 (판매순) 정렬
 	 * */
 	List<Goods> selectSell() throws SQLException;
+	
+	/**
+	 * 카테고리별 정렬
+	 * */
+	List<Goods> selectByCate(int cateId) throws SQLException;
 
 }
