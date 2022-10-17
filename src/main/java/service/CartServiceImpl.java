@@ -1,6 +1,7 @@
 package service;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import dao.CartDAO;
 import dao.CartDAOImpl;
@@ -23,9 +24,9 @@ public class CartServiceImpl implements CartService {
 	}
 
 	@Override
-	public Cart selectByMemberId(String memberId) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Cart> selectByMemberId(String memberId) throws SQLException {
+		
+		return dao.selectByMemberId(memberId);
 	}
 
 }

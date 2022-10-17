@@ -5,11 +5,12 @@ import java.time.LocalDate;
 public class Cart {
 	private int cartId;
 	private String memberId;
-	private int goodsId;
 	private int count;
 	private String cartState;
 	private LocalDate cartDate;
+	private int goodsId;
 	
+	private Goods goods;
 	
 	public Cart(String memberId, int goodsId, int count) {
 		super();
@@ -17,18 +18,59 @@ public class Cart {
 		this.goodsId = goodsId;
 		this.count = count;
 	}
+	
+	
 
-	public Cart(int cartId, String memberId, int goodsId, int count, String cartState, LocalDate cartDate) {
+	public Cart(int count, Goods goods) {
+		super();
+		this.count = count;
+		this.goods = goods;
+	}
+
+
+
+	public Cart(int cartId, String memberId, int count, String cartState, LocalDate cartDate, int goodsId) {
 		super();
 		this.cartId = cartId;
 		this.memberId = memberId;
-		this.goodsId = goodsId;
 		this.count = count;
 		this.cartState = cartState;
 		this.cartDate = cartDate;
+		this.goodsId = goodsId;
 	}
 	
+	
 
+	//goods_id , goods_name, goods_price, count, goods_img
+	/*public Cart(int goodsId, String goodsName, int goodsPrice, int count, String goodsImg) {
+		this.goodsId = goodsId;
+		this.goods.getGoodsName();
+		this.goods.getGoodsPrice();
+		this.count = count;
+		this.goods.getGoodsImg();
+		
+	}*/
+
+	public Cart(int cartId, String memberId, int count, String cartState, LocalDate cartDate, int goodsId,
+			Goods goods) {
+		super();
+		this.cartId = cartId;
+		this.memberId = memberId;
+		this.count = count;
+		this.cartState = cartState;
+		this.cartDate = cartDate;
+		this.goodsId = goodsId;
+		this.goods = goods;
+	}
+
+	public Goods getGoods() {
+		return goods;
+	}
+
+	public void setGoods(Goods goods) {
+		this.goods = goods;
+	}
+	
 	public int getCartId() {
 		return cartId;
 	}

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="../common/header.jsp"/>
     
 <!DOCTYPE html>
@@ -31,18 +33,19 @@
                                 </tr>
                             </thead>
                             <tbody>
+                            	<c:forEach items="${requestScope.cartList}" var="cartList">
                                 <tr>
                                     <td class="shoping__cart__item">
-                                        <img src="img/cart/cart-1.jpg" alt="">
-                                        <h5>Vegetable’s Package</h5>
+                                        <img src="${cartList.goodsImg}" alt="">
+                                        <h5>${cartList.goodsId }</h5>
                                     </td>
                                     <td class="shoping__cart__price">
-                                        0 원
+                                        <fmt:formatNumber>${cartList.goodsPrice}</fmt:formatNumber>
                                     </td>
                                     <td class="shoping__cart__quantity">
                                         <div class="quantity">
                                             <div class="pro-qty">
-                                                <input type="text" value="1">
+                                                <input type="text" value=${cartList.count}>
                                             </div>
                                         </div>
                                     </td>
@@ -53,50 +56,7 @@
                                         <span class="icon_close"></span>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td class="shoping__cart__item">
-                                        <img src="img/cart/cart-2.jpg" alt="">
-                                        <h5>Fresh Garden Vegetable</h5>
-                                    </td>
-                                    <td class="shoping__cart__price">
-                                        0 원
-                                    </td>
-                                    <td class="shoping__cart__quantity">
-                                        <div class="quantity">
-                                            <div class="pro-qty">
-                                                <input type="text" value="1">
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="shoping__cart__total">
-                                        0 원
-                                    </td>
-                                    <td class="shoping__cart__item__close">
-                                        <span class="icon_close"></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="shoping__cart__item">
-                                        <img src="img/cart/cart-3.jpg" alt="">
-                                        <h5>Organic Bananas</h5>
-                                    </td>
-                                    <td class="shoping__cart__price">
-                                        0 원
-                                    </td>
-                                    <td class="shoping__cart__quantity">
-                                        <div class="quantity">
-                                            <div class="pro-qty">
-                                                <input type="text" value="1">
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="shoping__cart__total">
-                                       0 원
-                                    </td>
-                                    <td class="shoping__cart__item__close">
-                                        <span class="icon_close"></span>
-                                    </td>
-                                </tr>
+                                </c:forEach>
                             </tbody>
                         </table>
                     </div>

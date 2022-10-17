@@ -2,6 +2,8 @@ package controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -36,10 +38,11 @@ public class CartController implements Controller {
 	 * @throws NumberFormatException 
 	 * @throws AuthenticationException 
 	 * */
-	public void insert (HttpServletRequest request, HttpServletResponse response) throws NumberFormatException, SQLException, AuthenticationException {
+	public ModelAndView insert (HttpServletRequest request, HttpServletResponse response) throws NumberFormatException, SQLException, AuthenticationException {
 		
 		HttpSession session = request.getSession();
 		String memberId = null;
+		String goodsId = null;
 		
 		if(session.getAttribute("loginUser")==null) {
 			//인증 안되었음
@@ -50,7 +53,7 @@ public class CartController implements Controller {
 			Member dbmem = (Member)session.getAttribute("loginUser");
 			memberId = dbmem.getMemberId();
 			
-			String goodsId = request.getParameter("goodsId");
+			goodsId = request.getParameter("goodsId");
 			System.out.println("상품 아이디: "+goodsId);
 			int goodsId1 = Integer.parseInt(goodsId);
 			
@@ -66,7 +69,34 @@ public class CartController implements Controller {
 //			CartDTO cart = cartService.getCart(userId);
 //			cartService.insert(cart, goods, amount);
 		}
-//		return new ModelAndView("front?key=cart&methodName=select&userId="+userId, true); // 원래의 장바구니넣기한 상세페이지 머물러있어야 함!!
+		return new ModelAndView("front?key=goods&methodName=goodsView&goodsId="+goodsId, true); // 원래의 장바구니넣기한 상세페이지 머물러있어야 함!!
+	}
+	
+	/**
+	 * 장바구니 조회하기
+	 * @throws SQLException 
+	 * */
+	public ModelAndView selectAll (HttpServletRequest request, HttpServletResponse response) throws AuthenticationException, SQLException {
+		
+		HttpSession session = request.getSession();
+		String memberId = null;
+		List<Cart> cartList = new ArrayList<Cart>();
+		
+		if(session.getAttribute("loginUser")==null) {
+			//인증 안되었음
+			throw new AuthenticationException("로그인 후 조회 가능합니다.");
+			
+		}else {
+			Member dbmem = (Member)session.getAttribute("loginUser");
+			memberId = dbmem.getMemberId();
+			
+			cartList = cartService.selectByMemberId(memberId);
+			
+		}
+		
+		request.setAttribute("cartList", cartList);
+		return new ModelAndView("cart/shoppingCart.jsp");
+		
 	}
 
 }

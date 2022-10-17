@@ -1,6 +1,7 @@
 package service;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import dto.Cart;
 
@@ -29,6 +30,6 @@ public interface CartService {
 	/**
 	 * 사용자 아이디로 장바구니 가져오기
 	 * */
-	Cart selectByMemberId(String memberId) throws SQLException;
+	List<Cart> selectByMemberId(String memberId) throws SQLException;
 
 }

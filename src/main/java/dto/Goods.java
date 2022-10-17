@@ -13,6 +13,8 @@ public class Goods {
 	private String soldState;
 	private LocalDate goodsDate;
 	
+	public Goods() {}
+	
 	public Goods(int goodsId) {
 		super();
 		this.goodsId = goodsId;

@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import dto.Cart;
@@ -51,13 +53,15 @@ public class CartDAOImpl implements CartDAO {
 
 	
 	@Override
-	public Cart selectByMemberId(String memberId) throws SQLException {
+	public List<Cart> selectByMemberId(String memberId) throws SQLException {
 		Connection con=null;
 		PreparedStatement ps=null;
 		ResultSet rs=null;
-		Cart cart = null;
 		
-		String sql=proFile.getProperty("goods.selectByGoodsCode");
+		Cart cart;
+		List<Cart> cartList = new ArrayList<Cart>();
+		
+		String sql=proFile.getProperty("cart.selectByMemberId");
 		
 		try {
 			con = DbUtil.getConnection();
@@ -66,15 +70,21 @@ public class CartDAOImpl implements CartDAO {
 			
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				cart = new Cart(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4),
-						rs.getString(5), rs.getDate(6).toLocalDate());
+				cart = new Cart(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), 
+						rs.getDate(5).toLocalDate(), rs.getInt(6));
+				cart.setGoods(new Goods());
+				cart.getGoods().setGoodsId(rs.getInt(7));
+				cart.getGoods().setGoodsName(rs.getString(8));
+				cart.getGoods().setGoodsPrice(rs.getInt(9));
+				cart.getGoods().setGoodsImg(rs.getString(10));
+				cartList.add(cart);
 				
 			}
 		} finally {
 			DbUtil.dbClose(rs, ps, con);
 		}
 		
-		return cart;
+		return cartList;
 	}
 
 }
