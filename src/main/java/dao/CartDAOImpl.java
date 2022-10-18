@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -70,13 +71,12 @@ public class CartDAOImpl implements CartDAO {
 			
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				cart = new Cart(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), 
-						rs.getDate(5).toLocalDate(), rs.getInt(6));
+				cart = new Cart(0, null, rs.getInt(4), null, null, 0);
 				cart.setGoods(new Goods());
-				cart.getGoods().setGoodsId(rs.getInt(7));
-				cart.getGoods().setGoodsName(rs.getString(8));
-				cart.getGoods().setGoodsPrice(rs.getInt(9));
-				cart.getGoods().setGoodsImg(rs.getString(10));
+				cart.getGoods().setGoodsId(rs.getInt(1));
+				cart.getGoods().setGoodsName(rs.getString(2));
+				cart.getGoods().setGoodsPrice(rs.getInt(3));
+				cart.getGoods().setGoodsImg(rs.getString(5));
 				cartList.add(cart);
 				
 			}

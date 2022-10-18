@@ -1,15 +1,12 @@
 package controller;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import exception.AuthenticationException;
-
-public class QnaController implements Controller {
+public class LikeController implements Controller {
 
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
@@ -19,16 +16,7 @@ public class QnaController implements Controller {
 	}
 	
 	/**
-	 * 글쓰기
+	 * 버튼 클릭시 찜하기 누적 (아이디당 한번만 가능)
 	 * */
-	public ModelAndView insert (HttpServletRequest request, HttpServletResponse response) throws AuthenticationException, SQLException {
-		
-		
-		
-		
-		
-		return null;
-	}
-	
 
 }

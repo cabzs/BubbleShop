@@ -67,7 +67,7 @@
                                     <li><a href="#" name="category" id="5" >소품</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./blog.html">게시판</a></li>
+                            <li><a href="${pageContext.request.contextPath}/board/QnaList.jsp">게시판</a></li>
                             <li><a href="./contact.html">리뷰</a></li>
                         </ul>
                     </nav>
