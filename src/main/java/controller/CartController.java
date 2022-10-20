@@ -57,17 +57,11 @@ public class CartController implements Controller {
 			System.out.println("상품 아이디: "+goodsId);
 			int goodsId1 = Integer.parseInt(goodsId);
 			
-//			Goods goods = goodsService.select(Integer.parseInt(memberId));
-			
 			int count = Integer.parseInt(request.getParameter("quantity"));
 			
 			Cart cart = new Cart(memberId, goodsId1 , count);
 			cartService.insert(cart);
 			
-//			Cart cart = cartService.selectByMemberId(memberId);
-	
-//			CartDTO cart = cartService.getCart(userId);
-//			cartService.insert(cart, goods, amount);
 		}
 		return new ModelAndView("front?key=goods&methodName=goodsView&goodsId="+goodsId, true); // 원래의 장바구니넣기한 상세페이지 머물러있어야 함!!
 	}
@@ -98,5 +92,26 @@ public class CartController implements Controller {
 		return new ModelAndView("cart/shoppingCart.jsp");
 		
 	}
+	
+	/**
+	 * 장바구니에서 주문 폼으로 이동
+	 * @throws SQLException 
+	 * */
+	public ModelAndView cartOrder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+		HttpSession session = request.getSession();
+		List<Cart> cartList = new ArrayList<Cart>();
+		
 
+		
+		Member dbmem = (Member)session.getAttribute("loginUser");
+		String memberId = dbmem.getMemberId();
+
+		cartList = cartService.selectInfoById(memberId);
+		
+		session.setAttribute("cartList", cartList);
+
+		return new ModelAndView("cart/cartOrder.jsp" , true);
+	}
+	
+	
 }

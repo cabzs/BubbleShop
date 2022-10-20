@@ -67,7 +67,7 @@
                                     <li><a href="#" name="category" id="5" >소품</a></li>
                                 </ul>
                             </li>
-                            <li><a href="${pageContext.request.contextPath}/board/QnaList.jsp">게시판</a></li>
+                            <li><a href="${pageContext.request.contextPath}/front?key=qnaBoard&methodName=selectAll">게시판</a></li>
                             <li><a href="./contact.html">리뷰</a></li>
                         </ul>
                     </nav>
@@ -89,8 +89,8 @@
                         <c:if test="${empty loginUser}">
 							<li><a href="${pageContext.request.contextPath}/user/login.jsp"><i class="fa fa-user fa-xl" aria-hidden="true"></i></a></li>
 						</c:if>
-                            <li><a href="#"><i class="fa fa-heart fa-xl"></i> <span>1</span></a></li>
-                            <li><a href="${pageContext.request.contextPath}/front?key=cart&methodName=selectAll"><i class="fa fa-shopping-cart fa-xl" aria-hidden="true"></i><span>3</span></a></li>
+                            <li><a href="#"><i class="fa fa-heart fa-xl"></i></a></li>
+                            <li><a href="${pageContext.request.contextPath}/front?key=cart&methodName=selectAll"><i class="fa fa-shopping-cart fa-xl" aria-hidden="true"></i></a></li>
                         </ul>
                         
                         <c:if test="${loginUser ne null}">

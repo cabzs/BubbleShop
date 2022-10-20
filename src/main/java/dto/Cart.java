@@ -11,6 +11,7 @@ public class Cart {
 	private int goodsId;
 	
 	private Goods goods;
+	private Member member;
 	
 	public Cart(String memberId, int goodsId, int count) {
 		super();
@@ -61,6 +62,16 @@ public class Cart {
 		this.cartDate = cartDate;
 		this.goodsId = goodsId;
 		this.goods = goods;
+	}
+
+	
+	
+	public Member getMember() {
+		return member;
+	}
+
+	public void setMember(Member member) {
+		this.member = member;
 	}
 
 	public Goods getGoods() {

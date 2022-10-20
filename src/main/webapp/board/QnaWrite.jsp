@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+
 <body>
 <div class="container">
 
@@ -15,7 +16,7 @@
 	<br>
 	<h4> Qna 등록 </h4><br>
 
-	<form action="${pageContext.request.contextPath}/front?key=qna&methodName=insert" name="qna" method="post">
+	<form action="${pageContext.request.contextPath}/front?key=qnaBoard&methodName=insert" name="qna" method="post">
 		<hr>
 		<br><br>
 		
@@ -44,7 +45,7 @@
 		    <label class="col-sm-2 col-form-label"></label>
 		    <div class="col-sm-4">
 			    <div class="form-check">
-				  <input class="form-check-input" type="checkbox" value="" id="qnaSecret" name="qnaSecret">
+				  <input class="form-check-input" type="checkbox" value="Y" id="qnaSecret" name="qnaSecret" checked>
 				  <label class="form-check-label" for="flexCheckDefault">
 				   	<i class="fa fa-lock" aria-hidden="true"></i>
 				   	비밀글

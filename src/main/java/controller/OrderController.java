@@ -6,7 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class LikeController implements Controller {
+public class OrderController implements Controller {
 
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
@@ -16,7 +16,11 @@ public class LikeController implements Controller {
 	}
 	
 	/**
-	 * 버튼 클릭시 찜하기 누적 (아이디당 한번만 가능)
+	 * 주문하기
 	 * */
-
+	public ModelAndView insert (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		return null;
+	}
+	
+	
 }

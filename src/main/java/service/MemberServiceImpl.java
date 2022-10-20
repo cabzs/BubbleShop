@@ -14,7 +14,7 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public void insert(Member member) throws SQLException, AuthenticationException {
 		int result = dao.insert(member);
-		if(result ==0 )
+		if(result == 0 )
 			throw new AuthenticationException("회원 가입에 실패했습니다.");
 	}
 

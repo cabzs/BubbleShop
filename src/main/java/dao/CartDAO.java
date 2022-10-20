@@ -29,5 +29,11 @@ public interface CartDAO {
 	 * */
 	List<Cart> selectByMemberId(String memberId) throws SQLException;
 	
+	/**
+	 * 사용자 아이디로 장바구니 + 회원 정보 가져오기
+	 * */
+	List<Cart> selectInfoById(String memberId) throws SQLException;
+	
+	
 
 }

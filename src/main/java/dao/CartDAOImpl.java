@@ -11,6 +11,7 @@ import java.util.Properties;
 
 import dto.Cart;
 import dto.Goods;
+import dto.Member;
 import util.DbUtil;
 
 public class CartDAOImpl implements CartDAO {
@@ -77,6 +78,46 @@ public class CartDAOImpl implements CartDAO {
 				cart.getGoods().setGoodsName(rs.getString(2));
 				cart.getGoods().setGoodsPrice(rs.getInt(3));
 				cart.getGoods().setGoodsImg(rs.getString(5));
+				cartList.add(cart);
+				
+			}
+		} finally {
+			DbUtil.dbClose(rs, ps, con);
+		}
+		
+		return cartList;
+	}
+
+	@Override
+	public List<Cart> selectInfoById(String memberId) throws SQLException {
+		Connection con=null;
+		PreparedStatement ps=null;
+		ResultSet rs=null;
+		
+		Cart cart;
+		List<Cart> cartList = new ArrayList<Cart>();
+		
+		String sql=proFile.getProperty("cart.selectInfoById");
+		
+		try {
+			con = DbUtil.getConnection();
+			ps = con.prepareStatement(sql);
+			ps.setString(1, memberId);
+			
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				cart = new Cart(0, null, rs.getInt(4), null, null, 0);
+				cart.setGoods(new Goods());
+				cart.getGoods().setGoodsId(rs.getInt(1));
+				cart.getGoods().setGoodsName(rs.getString(2));
+				cart.getGoods().setGoodsPrice(rs.getInt(3));
+				cart.getGoods().setGoodsImg(rs.getString(5));
+				cart.setMember(new Member());
+				cart.getMember().setMemberName(rs.getString(6));
+				cart.getMember().setPhone(rs.getString(7));
+				cart.getMember().setAddress(rs.getString(8));
+				cart.getMember().setAddressDetail(rs.getString(9));
+				cart.getMember().setAddressCode(rs.getString(10));
 				cartList.add(cart);
 				
 			}

@@ -29,4 +29,18 @@ public class CartServiceImpl implements CartService {
 		return dao.selectByMemberId(memberId);
 	}
 
+	@Override
+	public List<Cart> selectInfoById(String memberId) throws SQLException {
+		if(memberId == null) {
+			throw new SQLException("아이디를 확인해주세요");
+		}
+		List<Cart> cartList = dao.selectInfoById(memberId);
+		
+		if(cartList == null) {
+			throw new SQLException("장바구니를 가져올 수 없습니다.");
+		}
+		
+		return cartList;
+	}
+
 }

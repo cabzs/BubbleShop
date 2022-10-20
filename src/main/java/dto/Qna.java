@@ -8,6 +8,9 @@ public class Qna {
 	private String qnaTitle;
 	private String qnaContent;
 	private LocalDate qnaDate;
+	private String qnaSecret;
+	
+	
 	
 	public Qna(int qnaId, String memberId, String qnaTitle, String qnaContent, LocalDate qnaDate) {
 		super();
@@ -17,6 +20,42 @@ public class Qna {
 		this.qnaContent = qnaContent;
 		this.qnaDate = qnaDate;
 	}
+	
+	
+
+	public Qna(String memberId, String qnaTitle, String qnaContent, String qnaSecret) {
+		super();
+		this.memberId = memberId;
+		this.qnaTitle = qnaTitle;
+		this.qnaContent = qnaContent;
+		this.qnaSecret = qnaSecret;
+	}
+
+
+
+	public Qna(int qnaId, String memberId, String qnaTitle, String qnaContent, LocalDate qnaDate, String qnaSecret) {
+		super();
+		this.qnaId = qnaId;
+		this.memberId = memberId;
+		this.qnaTitle = qnaTitle;
+		this.qnaContent = qnaContent;
+		this.qnaDate = qnaDate;
+		this.qnaSecret = qnaSecret;
+	}
+
+
+
+	public String getQnaSecret() {
+		return qnaSecret;
+	}
+
+
+
+	public void setQnaSecret(String qnaSecret) {
+		this.qnaSecret = qnaSecret;
+	}
+
+
 
 	public int getQnaId() {
 		return qnaId;

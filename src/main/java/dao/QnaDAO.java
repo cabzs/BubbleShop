@@ -30,7 +30,7 @@ public interface QnaDAO {
 	/**
 	 * Qna 내가 쓴 글 조회
 	 * */
-	Qna selectById(String memberId) throws SQLException;
+	List<Qna> selectById(String memberId) throws SQLException;
 	
 	/**
 	 * Qna 글번호로 검색

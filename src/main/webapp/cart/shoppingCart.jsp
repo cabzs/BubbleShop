@@ -11,10 +11,23 @@
 <title>Insert title here</title>
 </head>
 
+<script type="text/javascript">
+	$(function(){
+		
+		document.getElementById('orderBtn').onclick = function() {
+	        document.getElementById('cartForm').submit();
+	        return false;
+	    };
+		
+	})
+
+
+</script>
 
 <body>
 
 <!-- Shoping Cart Section Begin -->
+    <form action="${pageContext.request.contextPath}/front?key=cart&methodName=cartOrder&total=${total}&fee=${fee}" id="cartForm" name="cartForm" method="post"> 
     <section class="shoping-cart spad">
         <div class="container">
             <div class="row">
@@ -81,7 +94,7 @@
 					<c:set var = "total" value = "0" scope="session" />
 					<c:set var = "fee" value = "0" scope="session" />
 					<c:forEach items="${requestScope.cartList}" var="cartList">
-					<c:set var = "total" value = "${total + cartList.goods.goodsPrice * cartList.count}" />
+					<c:set var = "total" value = "${total + cartList.goods.goodsPrice * cartList.count}" scope="session"/>
 	                </c:forEach>
                         <ul>
                             <li>상품 총 금액 
@@ -90,24 +103,26 @@
 	                            <span>
 	                            <c:choose>
 	                            	<c:when test="${total >= 50000}">
-	                            		0 원 <c:set var="fee" value="0"/>
+	                            		0 원 <c:set var="fee" value="0" scope="session"/>
 	                            	</c:when>
 	                            	<c:otherwise>
 	                            		<fmt:formatNumber>2500</fmt:formatNumber> 원
-	                            		<c:set var="fee" value="2500"/>
+	                            		<c:set var="fee" value="2500" scope="session"/>
 	                            	</c:otherwise>
 	                            </c:choose>
 	                            </span>
                             </li>
                             <hr>
                             <li>총 결제 금액 <span><fmt:formatNumber> ${total+fee} </fmt:formatNumber> 원</span></li>
+                            <c:set var="all" value="${total+fee}" scope="session"/>
                         </ul>
-                        <a href="#" class="primary-btn">주문하기</a>
+                        <a href="#" class="primary-btn" id="orderBtn">주문하기</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+   </form>
     <!-- Shoping Cart Section End -->
 
  <!-- Js Plugins -->
