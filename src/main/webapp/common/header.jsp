@@ -89,7 +89,7 @@
                         <c:if test="${empty loginUser}">
 							<li><a href="${pageContext.request.contextPath}/user/login.jsp"><i class="fa fa-user fa-xl" aria-hidden="true"></i></a></li>
 						</c:if>
-                            <li><a href="#"><i class="fa fa-heart fa-xl"></i></a></li>
+                            <li><a href="${pageContext.request.contextPath}/front?key=like&methodName=selectAll"><i class="fa fa-heart fa-xl"></i></a></li>
                             <li><a href="${pageContext.request.contextPath}/front?key=cart&methodName=selectAll"><i class="fa fa-shopping-cart fa-xl" aria-hidden="true"></i></a></li>
                         </ul>
                         

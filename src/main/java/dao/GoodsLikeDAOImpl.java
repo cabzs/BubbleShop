@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import dto.Goods;
 import dto.GoodsLike;
 import util.DbUtil;
 
@@ -39,20 +40,30 @@ public class GoodsLikeDAOImpl implements GoodsLikeDAO {
 	}
 
 	@Override
-	public List<GoodsLike> selectAll() throws SQLException {
+	public List<GoodsLike> selectAll(String memberId) throws SQLException {
 		Connection con=null;
 		PreparedStatement ps=null;
 		ResultSet rs=null;
 		
+		GoodsLike goodsLike;
 		List<GoodsLike> list = new ArrayList<GoodsLike>();
 		String sql = proFile.getProperty("goodsLike.selectAll");
 		
 		try {
 			con = DbUtil.getConnection();
 			ps = con.prepareStatement(sql);
+			ps.setString(1, memberId);
+			
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				goodsLike = new GoodsLike(rs.getInt(1), rs.getInt(2), rs.getString(3));
+				goodsLike = new GoodsLike();
+				goodsLike.setGoods(new Goods());
+				goodsLike.getGoods().setGoodsId(rs.getInt(1));
+				goodsLike.getGoods().setGoodsName(rs.getString(2));
+				goodsLike.getGoods().setGoodsPrice(rs.getInt(3));
+				goodsLike.getGoods().setGoodsImg(rs.getString(4));
+				goodsLike.getGoods().setGoodsStock(rs.getInt(5));
+				
 				list.add(goodsLike);
 			}
 			

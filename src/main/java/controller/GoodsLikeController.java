@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import dto.GoodsLike;
 import dto.Member;
+import exception.AuthenticationException;
 import service.GoodsLikeService;
 import service.GoodsLikeServiceImpl;
 
@@ -49,19 +50,30 @@ public class GoodsLikeController implements Controller {
 	
 	/**
 	 * 내가 찜한 목록 조회
+	 * @throws AuthenticationException 
 	 * */
-	public ModelAndView selectAll (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public ModelAndView selectAll (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, AuthenticationException {
 		List<GoodsLike> likeList = null;
 		
-		try {
-			likeList = service.selectAll();
-		} catch (Exception e) {
-			e.printStackTrace();
-			return new ModelAndView("error/error.jsp");
+		HttpSession session = request.getSession();
+		
+		if(session.getAttribute("loginUser")==null) {
+			//인증 안되었음
+			throw new AuthenticationException("로그인 후 이용해주세요!");
+			
+		} else {
+			try {
+				Member dbmem = (Member)session.getAttribute("loginUser");
+				String memberId = dbmem.getMemberId();
+				
+				likeList = service.selectAll(memberId);
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+				return new ModelAndView("error/error.jsp");
+			}
 		}
 		request.setAttribute("likeList", likeList);		
 		return new ModelAndView("user/like.jsp");
 	}
-	
-
 }

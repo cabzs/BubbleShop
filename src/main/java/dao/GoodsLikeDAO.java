@@ -14,6 +14,6 @@ public interface GoodsLikeDAO {
 	/**
 	 * 내가 찜한 목록 조회
 	 * */
-	List<GoodsLike> selectAll() throws SQLException;
+	List<GoodsLike> selectAll(String memberId) throws SQLException;
 
 }

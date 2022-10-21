@@ -21,8 +21,8 @@ public class GoodsLikeServiceImpl implements GoodsLikeService {
 	}
 
 	@Override
-	public List<GoodsLike> selectAll() throws SQLException {
-		List<GoodsLike> likeList = dao.selectAll();
+	public List<GoodsLike> selectAll(String memberId) throws SQLException {
+		List<GoodsLike> likeList = dao.selectAll(memberId);
 		if(likeList == null) {
 			throw new SQLException("목록을 불러오지 못했습니다.");
 		}

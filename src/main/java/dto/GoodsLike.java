@@ -5,12 +5,25 @@ public class GoodsLike {
 	private int goodsId;
 	private String memberId;
 	
+	private Goods goods;
+	
+	public GoodsLike() {}
+	
 	public GoodsLike(int goodsLikeId, int goodsId, String memberId) {
 		super();
 		this.goodsLikeId = goodsLikeId;
 		this.goodsId = goodsId;
 		this.memberId = memberId;
 	}
+	
+	public Goods getGoods() {
+		return goods;
+	}
+
+	public void setGoods(Goods goods) {
+		this.goods = goods;
+	}
+
 
 	public int getGoodsLikeId() {
 		return goodsLikeId;
