@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <jsp:include page="common/header.jsp"/>
 
 <!DOCTYPE html>
@@ -85,7 +87,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>인기 상품</h2>
+                        <h2>전체 상품</h2>
                     </div>
                      <div class="row">
 					    <div class="col-md-8"></div>
@@ -93,15 +95,6 @@
 					    <div class="col-6 col-md-1"></div>
 					    <div class="col-6 col-md-1"><a href="${pageContext.request.contextPath}/front?key=goods&methodName=selectAll">더보기 ></a></div>
 					</div>
-                   <!--  <div class="featured__controls">
-                        <ul>
-                            <li class="active" data-filter="*">All</li>
-                            <li data-filter=".oranges">Oranges</li>
-                            <li data-filter=".fresh-meat">Fresh Meat</li>
-                            <li data-filter=".vegetables">Vegetables</li>
-                            <li data-filter=".fastfood">Fastfood</li>
-                        </ul>
-                    </div> -->
                 </div>
             </div>
             <div class="row featured__filter">

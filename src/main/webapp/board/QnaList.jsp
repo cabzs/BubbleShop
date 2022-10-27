@@ -44,7 +44,7 @@
 			  	<c:forEach items="${requestScope.qnaList}" var="qnaList" >
 			    <tr>
 			      <th scope="row">${qnaList.qnaId}</th>
-			      <td>@mdo</td>
+			      <td>-</td>
 			      <c:choose>
 			      	<c:when test="${qnaList.qnaSecret =='Y' }">
 				      <td colspan="3"><a href="${pageContext.request.contextPath}/#"><i class="fa fa-lock" aria-hidden="true"></i>&nbsp&nbsp 비밀글 입니다</a></td>
